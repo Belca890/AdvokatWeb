@@ -238,22 +238,18 @@
             background-color: #fff;
         }
 
-        .contact-container {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-        }
-
         .contact-info {
-            flex: 1;
+            max-width: 600px;
+            margin: 0 auto;
             background-color: #f5f7fa;
-            padding: 30px;
+            padding: 40px;
             border-radius: 8px;
+            text-align: center;
         }
 
         .contact-info p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
         .contact-info a {
@@ -264,27 +260,6 @@
 
         .contact-info a:hover {
             color: #c5a059;
-        }
-
-        .contact-map {
-            flex: 1;
-        }
-
-        .map-placeholder {
-            background-color: #e0e4ec;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            color: #4a4a5e;
-            font-weight: 500;
-        }
-
-        .map-placeholder small {
-            margin-top: 10px;
-            color: #777;
         }
 
         .footer {
@@ -318,10 +293,6 @@
                 font-size: 2.5rem;
             }
 
-            .contact-container {
-                flex-direction: column;
-            }
-
             .section-title {
                 font-size: 2rem;
             }
@@ -333,6 +304,14 @@
             .hero {
                 padding: 60px 0;
                 background-attachment: scroll; /* На мобильных отключаем фикс */
+            }
+            
+            .contact-info {
+                padding: 30px 20px;
+            }
+            
+            .contact-info p {
+                font-size: 1rem;
             }
         }
 
@@ -422,19 +401,11 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <p><strong>Адрес:</strong> г. Москва, Носовихинское ш., д. 27, кв. 777</p>
-                    <p><strong>Телефон:</strong> <a href="tel:+79647966228">+7 (964) 796-62-29</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:4870@apmo.ru">4870@apmo.ru</a></p>
-                    <p><strong>Часы работы:</strong> Пн-Пт: 10:00 - 19:00 (по предварительной записи)</p>
-                </div>
-                <div class="contact-map">
-                    <div class="map-placeholder">
-                        <p>Карта проезда</p>
-                        <small>(здесь будет iframe с картой)</small>
-                    </div>
-                </div>
+            <div class="contact-info">
+                <p><strong>Адрес:</strong> г. Москва, Носовихинское ш., д. 27, кв. 777</p>
+                <p><strong>Телефон:</strong> <a href="tel:+79647966229">+7 (964) 796-62-29</a></p>
+                <p><strong>Email:</strong> <a href="mailto:4870@apmo.ru">4870@apmo.ru</a></p>
+                <p><strong>Часы работы:</strong> Пн-Пт: 10:00 - 19:00 (по предварительной записи)</p>
             </div>
         </div>
     </section>
