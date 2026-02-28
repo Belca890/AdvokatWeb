@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адвокат Кондратьев Алексей Борисович</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e1e2f;
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #1e1e2f;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #c5a059;
+        }
+
+        .header {
+            background-color: #1e1e2f;
+            color: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-list a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-list a:hover {
+            color: #c5a059;
+        }
+
+        /* ГЕРОЙ СЕКЦИЯ С ФОНОМ МОСКВА-СИТИ */
+        .hero {
+            position: relative;
+            padding: 100px 0;
+            background-image: url('cityy.jpg'); /* ← ЗДЕСЬ ВАША ФОТОГРАФИЯ */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Эффект параллакса (фон чуть двигается) */
+            color: white;
+        }
+
+        /* ТЕМНАЯ ПЛЕНКА ПОВЕРХ ФОНА, ЧТОБЫ ТЕКСТ ЧИТАЛСЯ */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Черная полупрозрачная пленка */
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2; /* Чтобы текст был ПОВЕРХ пленки */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white; /* Белый текст на темном фоне */
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5); /* Тень для читаемости */
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9); /* Чуть прозрачный белый */
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #c5a059;
+            color: #fff;
+            border: 2px solid #c5a059;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: #c5a059;
+            border-color: #c5a059;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image-placeholder {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+            border-radius: 50%;
+            /* ЗАМЕНИТЕ НАЗВАНИЕ ФАЙЛА НА ВАШЕ ФОТО */
+            background-image: url('advokat.png'); 
+            background-size: cover;
+            background-position: center;
+            border: 4px solid #c5a059;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+
+        .about {
+            background-color: #fff;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .services {
+            background-color: #f9fafc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-bottom-color: #c5a059;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #1e1e2f;
+        }
+
+        .service-card p {
+            color: #5a5a6e;
+        }
+
+        .contact {
+            background-color: #fff;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f5f7fa;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: #1e1e2f;
+            text-decoration: none;
+            border-bottom: 1px dotted #c5a059;
+        }
+
+        .contact-info a:hover {
+            color: #c5a059;
+        }
+
+        .footer {
+            background-color: #1e1e2f;
+            color: #aaa;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-container p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-list {
+                gap: 20px;
+            }
+
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 50px 0;
+            }
+            
+            .hero {
+                padding: 60px 0;
+                background-attachment: scroll; /* На мобильных отключаем фикс */
+            }
+            
+            .contact-info {
+                padding: 30px 20px;
+            }
+            
+            .contact-info p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">А.Б. Кондратьев</div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about">Об адвокате</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ГЕРОЙ СЕКЦИЯ С ФОНОМ МОСКВА-СИТИ -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Кондратьев Алексей Борисович</h1>
+                <p class="hero-subtitle">Адвокат с многолетним опытом. Защита прав и интересов в суде.</p>
+                <a href="#contact" class="btn btn-primary">Связаться</a>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Об адвокате</h2>
+            <div class="about-content">
+                <p>Адвокат Кондратьев Алексей Борисович специализируется на гражданских, арбитражных и уголовных делах. Имеет высшее юридическое образование и более 20 лет успешной практики.</p>
+                <p>Принципы работы: индивидуальный подход к каждому делу, полный анализ ситуации, конфиденциальность и нацеленность на результат. Член Адвокатской палаты Московской области, регистрационный номер в реестре адвокатов — 77/12345.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Юридические услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Гражданские дела</h3>
+                    <p>Споры о праве собственности, наследство, жилищные вопросы, защита прав потребителей.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Арбитраж (бизнес)</h3>
+                    <p>Споры между юридическими лицами, взыскание задолженностей, договорные отношения.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Уголовная защита</h3>
+                    <p>Защита на следствии и в суде, обжалование приговоров, помощь подозреваемым и обвиняемым.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Консультации</h3>
+                    <p>Устные и письменные консультации, анализ документов, составление исков и жалоб.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Контакты</h2>
+            <div class="contact-info">
+                <p><strong>Адрес:</strong> г. Москва, Носовихинское ш., д. 27, кв. 777</p>
+                <p><strong>Телефон:</strong> <a href="tel:+79647966229">+7 (964) 796-62-29</a></p>
+                <p><strong>Email:</strong> <a href="mailto:4870@apmo.ru">4870@apmo.ru</a></p>
+                <p><strong>Часы работы:</strong> Пн-Пт: 10:00 - 19:00 (по предварительной записи)</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2026 Адвокат Кондратьев Алексей Борисович. Все права защищены.</p>
+            <p>Информация на сайте не является публичной офертой.</p>
+        </div>
+    </footer>
+</body>
+</html>
